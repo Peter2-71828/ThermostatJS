@@ -17,4 +17,17 @@ describe("Thermostat", function() {
     expect(thermostat.current_temp()).toEqual(19);
   })
 
+  it("should not decrease below a temperature of 10", function() {
+    thermostat = new Thermostat();
+    thermostat._temperature = 10;
+    thermostat.down();
+    expect(thermostat.current_temp()).toEqual(10);
+  })
+
+  it("should toggle powersaving mode", function() {
+    thermostat = new Thermostat();
+    thermostat.TogglePowerSave();
+    expect(thermostat._powerSaver).toEqual(false);
+  })
+
 });

@@ -30,4 +30,11 @@ describe("Thermostat", function() {
     expect(thermostat._powerSaver).toEqual(false);
   })
 
+  it("by default max temp is 25", function() {
+    thermostat = new Thermostat();
+    thermostat._temperature = 25;
+    thermostat.up();
+    expect(thermostat.current_temp()).toEqual(25);
+  })
+
 });

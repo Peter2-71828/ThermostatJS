@@ -1,6 +1,7 @@
 function Thermostat () {
   this._temperature = 20;
   this._powerSaver = true;
+  max = 25
 };
 
 Thermostat.prototype.current_temp =  function(){
@@ -8,7 +9,9 @@ Thermostat.prototype.current_temp =  function(){
 };
 
 Thermostat.prototype.up = function() {
-  this._temperature ++;
+  if (this._temperature < max){
+    this._temperature ++;
+  };
 }
 
 Thermostat.prototype.down = function() {

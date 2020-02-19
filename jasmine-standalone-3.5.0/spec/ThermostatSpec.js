@@ -37,4 +37,13 @@ describe("Thermostat", function() {
     expect(thermostat.current_temp()).toEqual(25);
   })
 
+  it("if not inn powerSaver max temp is 32", function() {
+    thermostat = new Thermostat();
+    thermostat._temperature = 31;
+    thermostat.TogglePowerSave();
+    thermostat.up()
+    thermostat.up()
+    expect(thermostat.current_temp()).toEqual(32);
+  })
+
 });
